@@ -1,0 +1,75 @@
+.block-header {
+    >*:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    &__label {
+        text-transform: capitalize;
+        line-height: 156.25%;
+        &._anim-items {
+            transform: translate(0, -100%);
+            opacity: 0;
+            transition: all 0.6s ease 0.3s;
+            &._active {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+    }
+    &__title {
+        text-transform: capitalize;
+        color: $bgGoldColor;
+        font-family: 'Italiana';
+        @include adaptiveValue('font-size', 48, 42);
+        &._anim-items {
+            opacity: 0;
+            transition: opacity 0.6s ease 0.3s;
+            &._active {
+                opacity: 1;
+            }
+        }
+    }
+    &__text {
+        line-height: 156.25%;
+        display: grid;
+        gap: rem(20);
+        blockquote {
+            font-style: italic;
+        }
+        &-white {
+            color: $whiteColor;
+        }
+        &._anim-items {
+            transform: translate(-100%, 0);
+            opacity: 0;
+            transition: all 0.6s ease 0.3s;
+            &._active {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+    }
+    &__button {
+        &._anim-items {
+            opacity: 0;
+            transition: opacity 0.6s ease 0.3s;
+            &._active {
+                opacity: 1;
+            }
+        }
+    }
+    &__center {
+        text-align: center;
+    }
+}
+
+/*
+<div class="block-header">
+                <h5 class="block-header__label">About us</h5>
+                <h2 class="block-header__title">Treating pet like Royalty</h2>
+                <div class="block-header__text">
+                    <blockquote>“They’re not just pets, they’re family”</blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam mi id augue ultrices, in tempus elit tristique. Aliquam ultrices sem non.</p>
+                </div>
+                <a href="#" class="block-header__button button"><span>Explore</span></a>
+            </div>
+*/

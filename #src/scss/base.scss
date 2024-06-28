@@ -1,0 +1,39 @@
+@import "base/button";
+
+/*=================SPOLLERS==================*/
+.spollers {
+    &._init {
+        .spollers__title {
+            cursor: pointer;
+        }
+    }
+    &__title {
+        cursor: default;
+    }
+}
+/*=================HEADER-HIDDEN-SCROLL==================*/
+.header {
+  transition: all 0.5s ease 0s;
+}
+.header.header-hidden {
+    top: -100%; /* Величина приховання вашої шапки */
+}
+
+
+// Клас -IBG
+[class*="-ibg"] {
+    position: relative;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+[class*="-ibg-contain"] {
+    img {
+        object-fit: contain;
+    }
+}

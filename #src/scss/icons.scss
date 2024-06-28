@@ -1,0 +1,45 @@
+%ic {
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+    &:before {
+        @extend %ic;
+        display: block;
+    }
+}
+
+// Сюди додавати before з content
+._icon-s-medium:before {
+  content: "\e900";
+}
+._icon-s-tiktok:before {
+  content: "\e901";
+}
+._icon-s-instagram:before {
+  content: "\e902";
+}
+._icon-s-twitter:before {
+  content: "\e903";
+}
+._icon-location:before {
+  content: "\e904";
+}
+._icon-clock:before {
+  content: "\e905";
+}
+._icon-play:before {
+  content: "\e906";
+}
+._icon-arrow:before {
+  content: "\e907";
+}
+._icon-logo:before {
+  content: "\e908";
+}

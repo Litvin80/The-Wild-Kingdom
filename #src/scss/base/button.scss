@@ -1,0 +1,45 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(12) rem(30);
+    border-radius: rem(50);
+    font-weight: 300;
+    color: $mainColor;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    @media (any-hover: hover) {
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        transition: opacity 0.3s ease 0s;
+    }
+    span {
+        position: relative;
+    }
+    &--border {
+        background-color: transparent;
+        border: rem(1) solid $goldColor;
+        color: $goldColor;
+        transition: color 0.3s ease 0s;
+        &:hover {
+            color: $mainColor;
+        }
+        @media (max-width: $mobile) {
+            color: $whiteColor;
+            border: rem(1) solid $whiteColor;
+        }
+    }
+}

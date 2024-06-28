@@ -1,0 +1,21 @@
+/*========= ADAPTIVE PROPERTY FUNCTION ===========*/
+@mixin adaptiveText($startValue, $endValue, $startWidth, $endWidth) {
+    font-size: rem($startValue);
+    @media (max-width: em($startWidth)) {
+        font-size: calc(#{rem($endValue)} + (#{$startValue} - #{$endValue}) * ((100vw - #{em($endWidth)}) / ( #{$startWidth} - #{$endWidth})));
+    }
+    @media (max-width: em($endWidth)) {
+        font-size: rem($endValue);
+    }
+}
+
+/* Якщо потрібно адаптувати на весь екрна, та інші випадки, то відео 'Адаптивное свойство' */
+@mixin adaptiveValue($property, $startValue, $endValue, $startWidth: $containerWidth, $endWidth: $minWidth) {
+    #{$property}: rem($startValue);
+    @media (max-width: em($startWidth)) {
+        #{$property}: calc(#{rem($endValue)} + (#{$startValue} - #{$endValue}) * ((100vw - #{em($endWidth)}) / ( #{$startWidth} - #{$endWidth})));
+    }
+    @media (max-width: em($endWidth)) {
+        #{$property}: rem($endValue);
+    }
+}
